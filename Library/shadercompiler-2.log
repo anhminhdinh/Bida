@@ -1,0 +1,12 @@
+Base path: /Applications/Unity/Unity.app/Contents
+Pipe name: \\.\pipe\UnityShaderCompiler-2--1334079488
+Cmd: getPlatforms
+Cmd: compileSnippet
+  api=9 type=0 insize=2211 outsize=3188 kw=DUMMY ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2211 outsize=7 kw=DUMMY ok=1
+Cmd: compileSnippet
+  api=5 type=1 insize=2211 outsize=6 kw=PIXELSNAP_ON ok=1
+End of pipe
+
+Quitting shader compiler process

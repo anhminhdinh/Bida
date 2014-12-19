@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{E440CA9E-19F9-7742-6C95-A7EE336C2B3D}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\FirebaseProtocol\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\BadPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ChannelChatPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\CreateTableRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\CreateTableResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\EncryptedTransportPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\Enums.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\FilteredJoinCancelRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\FilteredJoinCancelResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\FilteredJoinTableAvailablePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\FilteredJoinTableRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\FilteredJoinTableResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ForcedLogoutPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\GameTransportPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\GameVersionPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\GoodPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\InvitePlayersRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\JoinChatChannelRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\JoinChatChannelResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\JoinRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\JoinResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\KickPlayerPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LeaveChatChannelPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LeaveRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LeaveResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LobbyObjectSubscribePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LobbyObjectUnsubscribePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LobbyQueryPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LobbySubscribePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LobbyUnsubscribePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LocalServiceTransportPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LoginRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LoginResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\LogoutPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttPickedUpPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttRegisterRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttRegisterResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttSeatedPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttTransportPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttUnregisterRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\MttUnregisterResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifyChannelChatPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifyInvitedPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifyJoinPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifyLeavePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifyRegisteredPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifySeatedPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\NotifyWatchingPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\Param.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ParamFilter.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\PingPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\PlayerInfoPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\PlayerQueryRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\PlayerQueryResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ProbePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ProbeStamp.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ProtocolObjectFactory.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\SeatInfoPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\ServiceTransportPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\SystemInfoRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\SystemInfoResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\SystemMessagePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableChatPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableQueryRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableQueryResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableRemovedPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableSnapshotListPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableSnapshotPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableUpdateListPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TableUpdatePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TournamentRemovedPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TournamentSnapshotListPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TournamentSnapshotPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TournamentUpdateListPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\TournamentUpdatePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\UnwatchRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\UnwatchResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\VersionPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\WatchRequestPacket.cs" />
+     <Compile Include="Assets\Plugins\FirebaseProtocol\com\cubeia\firebase\io\protocol\WatchResponsePacket.cs" />
+     <Compile Include="Assets\Plugins\SimpleJSON.cs" />
+     <Compile Include="Assets\Plugins\Styx\ObjectFactory.cs" />
+     <Compile Include="Assets\Plugins\Styx\PacketInputStream.cs" />
+     <Compile Include="Assets\Plugins\Styx\PacketOutputStream.cs" />
+     <Compile Include="Assets\Plugins\Styx\ProtocolObject.cs" />
+     <Compile Include="Assets\Plugins\Styx\StyxSerializer.cs" />
+     <Compile Include="Assets\Plugins\StyxPacketInfo.cs" />
+     <None Include="Assets\Shaders\SpriteDefault.shader" />
+     <None Include="Assets\Shaders\Ball.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Vectrosity">
+ <HintPath>/Users/minhdinh/dev/Unity/Bida/Assets/Vectrosity/Vectrosity.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
