@@ -17,6 +17,6 @@ public class GameType
 	public readonly static int CARO = 8009;
 	public readonly static int POKER = 8008;
 
-	public readonly static int TEST = 1001;
+	public readonly static int TEST = 1002;
 }
 
