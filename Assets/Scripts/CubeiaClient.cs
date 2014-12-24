@@ -341,7 +341,7 @@ public class CubeiaClient
 		var jsonData = new JSONClass();
 		jsonData ["evt"] = "searchT";
 		jsonData ["gameid"].AsInt = gameId;
-		jsonData ["mark"].AsInt = 10;
+		jsonData ["mark"].AsInt = 20;
 
 		sendService(jsonData.ToString());
 	}

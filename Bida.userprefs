@@ -5,9 +5,10 @@
       <File FileName="Assets/Scripts/CamStart.cs" Line="1" Column="1" />
       <File FileName="../../../Downloads/SmoothRigidbody/Assets/Plugins/uLink/Utility Scripts/uLinkSmoothCharacter.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BallUpdate.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="227" Column="40" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameApplication.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CubeiaClient.cs" Line="78" Column="70" />
+      <File FileName="Assets/Scripts/CubeiaClient.cs" Line="73" Column="39" />
+      <File FileName="Assets/Scripts/game objects/GameType.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

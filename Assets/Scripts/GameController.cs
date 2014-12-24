@@ -218,16 +218,16 @@ public class GameController : MonoBehaviour {
 				jsonData [ballname + "y"].AsFloat = y;
 				jsonData [ballname + "st"].AsBool = st;
 
-				Ball ball = GOSDict[ballname];
-				ball.destx.Add(x);
-				ball.desty.Add(y); 
-				ball.st.Add(st);
-				if (ball.destx.Count != 1) {
-					float[] dx = ball.destx.ToArray();
-					float[] dy = ball.desty.ToArray();
-					ball.orgx.Add(dx[ball.destx.Count - 2]);
-					ball.orgy.Add(dy[ball.desty.Count - 2]);
-				}
+//				Ball ball = GOSDict[ballname];
+//				ball.destx.Add(x);
+//				ball.desty.Add(y); 
+//				ball.st.Add(st);
+//				if (ball.destx.Count != 1) {
+//					float[] dx = ball.destx.ToArray();
+//					float[] dy = ball.desty.ToArray();
+//					ball.orgx.Add(dx[ball.destx.Count - 2]);
+//					ball.orgy.Add(dy[ball.desty.Count - 2]);
+//				}
 			}
 			cubeia.sendDataGame(jsonData);
 		} else {
