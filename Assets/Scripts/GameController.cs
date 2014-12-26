@@ -218,27 +218,21 @@ public class GameController : MonoBehaviour {
 				jsonData [ballname + "y"].AsFloat = y;
 				jsonData [ballname + "st"].AsBool = st;
 
-//				Ball ball = GOSDict[ballname];
-//				ball.destx.Add(x);
-//				ball.desty.Add(y); 
-//				ball.st.Add(st);
-//				if (ball.destx.Count != 1) {
-//					float[] dx = ball.destx.ToArray();
-//					float[] dy = ball.desty.ToArray();
-//					ball.orgx.Add(dx[ball.destx.Count - 2]);
-//					ball.orgy.Add(dy[ball.desty.Count - 2]);
-//				}
 			}
 			cubeia.sendDataGame(jsonData);
 		} else {
 			updateBallsTimer -= Time.deltaTime;
-//			Debug.Log(updateBallsTimer);
+//			Debug.Log(Time.deltaTime);
 		}
 
 		foreach (GameObject GO in GOS) {
 			if (GO.activeInHierarchy && !GO.rigidbody2D.IsSleeping ())
 				return;
 		}
+		var jsonDataEnd = new JSONClass ();
+		jsonDataEnd ["evt"] = "endshoot";
+		cubeia.sendDataGame (jsonDataEnd);
+
 		gameState = GAMESTATE.AIM;
 		foreach (GameObject GO in GOS) {
 			if (GO.name == "CueBall")
@@ -337,29 +331,6 @@ public class GameController : MonoBehaviour {
 	
 	void FixedUpdate() {
 		cubeia.processEvents ();
-		if (gameState == GAMESTATE.WAIT) {
-			float timeToUpdate = lastUpdateBallsTimer - updateBallsTimer;
-			timeToUpdateBalls += Time.fixedDeltaTime;
-			foreach (GameObject GO in GOS) {
-				Ball ball = GOSDict[GO.name];
-//				Vector2 newPos = new Vector2(ball.destx, ball.desty);
-//				if ((GO.transform.position.x != newPos.x) || (GO.transform.position.y != newPos.y)) {
-//					Vector2 curPos = new Vector2(ball.orgx, ball.orgy);
-//					if (timeToUpdateBalls < timeToUpdate) {
-//						Vector2 deltaPos = newPos - curPos;
-//						deltaPos *= timeToUpdateBalls / timeToUpdate;
-//						curPos += deltaPos;
-//						GO.rigidbody2D.MovePosition(curPos);
-//						Debug.Log("Smooth");
-//					} else {
-//						Debug.Log("Lag");
-//						GO.rigidbody2D.MovePosition(newPos);
-//					}
-//				}
-			}
-			return;
-		}
-
 	}
 	
 	private void OnGUI() {
@@ -372,17 +343,6 @@ public class GameController : MonoBehaviour {
 		if (gameState == GAMESTATE.SHOOT)
 			return;
 		updateBallsTimer = DELAY;
-		foreach (GameObject GO in GOS) {
-			Ball ball = GOSDict[GO.name];
-			ball.orgx.Clear();
-			ball.orgx.Add(GO.transform.position.x);
-			ball.orgy.Clear();
-			ball.orgy.Add(GO.transform.position.y);
-			ball.st.Clear();
-//			ball.st.Add(GO.activeInHierarchy);
-			ball.destx.Clear();
-			ball.desty.Clear();
-		}
 		gameState = GAMESTATE.SHOOT;
 		shootLine.active = false;
 		reflectLine.active = false;
@@ -391,6 +351,9 @@ public class GameController : MonoBehaviour {
 		Vector2 v = new Vector2(transform.position.x - cue.transform.position.x, transform.position.y - cue.transform.position.y);
 		v.Normalize();
 		rigidbody2D.velocity = v * 800.0f;
+		var jsonData = new JSONClass ();
+		jsonData ["evt"] = "startshoot";
+		cubeia.sendDataGame (jsonData);
 
 //		rigidbody2D.AddForce(-v*6400.0f, ForceMode2D.Force);
 	}
@@ -401,16 +364,20 @@ public class GameController : MonoBehaviour {
 		
 		var gameData = JSONNode.Parse (jsonGameTransportPacket);
 		string evt = gameData ["evt"];
-		if (evt == "balls") {
-			timeToUpdateBalls = 0;
-			if (lastUpdateBallsTimer == 0.0f) {
-				updateBallsTimer = Time.fixedTime - DELAY;
-				lastUpdateBallsTimer = Time.fixedTime;
-			} else {
-				updateBallsTimer = lastUpdateBallsTimer;
-				lastUpdateBallsTimer = Time.fixedTime;
-			}
+		if (evt == "startshoot") {
 			gameState = GAMESTATE.WAIT;
+			foreach (GameObject GO in GOS) {
+				string ballname = GO.name;
+				Ball ball = GOSDict[ballname];
+				ball.orgx.Clear();
+				ball.orgx.Add(GO.transform.position.x);
+				ball.orgy.Clear();
+				ball.orgx.Add(GO.transform.position.y);
+				ball.destx.Clear();
+				ball.desty.Clear();
+				ball.st.Clear();
+			}
+		} else if (evt == "balls") {
 			foreach (GameObject GO in GOS) {
 				string ballname = GO.name;
 				float x = gameData[ballname + "x"].AsFloat;
@@ -420,14 +387,13 @@ public class GameController : MonoBehaviour {
 				Ball ball = GOSDict[ballname];
 				ball.destx.Add(x);
 				ball.desty.Add(y); 
-				if (ball.destx.Count == 1) {
-					ball.orgx.Add (GO.transform.position.x);
-					ball.orgy.Add (GO.transform.position.y);
-				} else {
+				if (ball.destx.Count > 1) {
 					ball.orgx.Add(ball.destx[ball.destx.Count - 2]);
 					ball.orgy.Add(ball.desty[ball.desty.Count - 2]);
 				}
 			}
+		} else if (evt == "endshoot") {
+			gameState = GAMESTATE.REPLAY;
 		}
 	}
 }
