@@ -181,6 +181,12 @@ public class GameController : MonoBehaviour {
 			} else {
 				updateBallsTimer -= Time.deltaTime;
 				timeToUpdateBalls += Time.deltaTime;
+				if (timeToUpdateBalls >= DELAY)
+					timeToUpdateBalls = DELAY;
+
+				foreach (GameObject GO in GOS) {
+					GO.rigidbody2D.collider2D.enabled = false;
+				}
 				foreach (GameObject GO in GOS) {
 					Ball ball = GOSDict[GO.name];
 					if (ball.destx.Count > 0) {
@@ -372,7 +378,7 @@ public class GameController : MonoBehaviour {
 				ball.orgx.Clear();
 				ball.orgx.Add(GO.transform.position.x);
 				ball.orgy.Clear();
-				ball.orgx.Add(GO.transform.position.y);
+				ball.orgy.Add(GO.transform.position.y);
 				ball.destx.Clear();
 				ball.desty.Clear();
 				ball.st.Clear();
@@ -383,10 +389,11 @@ public class GameController : MonoBehaviour {
 				float x = gameData[ballname + "x"].AsFloat;
 				float y = gameData[ballname + "y"].AsFloat;
 				bool st = gameData[ballname + "st"].AsBool;
-				GO.SetActive(st);
+//				GO.SetActive(st);
 				Ball ball = GOSDict[ballname];
 				ball.destx.Add(x);
 				ball.desty.Add(y); 
+				ball.st.Add(st);
 				if (ball.destx.Count > 1) {
 					ball.orgx.Add(ball.destx[ball.destx.Count - 2]);
 					ball.orgy.Add(ball.desty[ball.desty.Count - 2]);
